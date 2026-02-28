@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180">
+  <!-- STYLE 3: Netflix ribbon gradient — curved 3D shadow on each letter stroke -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap');
+    </style>
+    <linearGradient id="ribbonV" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B20710"/>
+      <stop offset="15%" stop-color="#E50914"/>
+      <stop offset="40%" stop-color="#E50914"/>
+      <stop offset="50%" stop-color="#6D0000"/>
+      <stop offset="60%" stop-color="#E50914"/>
+      <stop offset="85%" stop-color="#E50914"/>
+      <stop offset="100%" stop-color="#B20710"/>
+    </linearGradient>
+    <filter id="glow3" x="-10%" y="-10%" width="125%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="0" dy="5" result="off"/>
+      <feFlood flood-color="#000" flood-opacity="0.55"/>
+      <feComposite in2="off" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <text x="450" y="138" text-anchor="middle"
+        font-family="'Bebas Neue', 'Arial Black', Impact, 'Helvetica Neue', Arial, sans-serif"
+        font-size="155" font-weight="900" letter-spacing="14"
+        fill="url(#ribbonV)" filter="url(#glow3)">REXFLIX</text>
+</svg>

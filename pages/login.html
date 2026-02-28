@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rexflix - Sign In</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="rexflix-page">
+    <header class="rexflix-header">
+      <a href="index.html" class="rexflix-logo"><img src="../assets/logos/rexflix-logo-5.svg" alt="Rexflix" height="45"></a>
+    </header>
+
+    <main class="card">
+      <h1 class="title" id="form-title">Sign In</h1>
+      <p class="subtitle" id="form-subtitle">
+        Use your email and password to sign in.
+      </p>
+
+      <!-- Login form -->
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <input
+            type="email"
+            id="loginEmail"
+            name="loginEmail"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            name="loginPassword"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="actions">
+          <button type="submit">Sign In</button>
+        </div>
+      </form>
+
+      <!-- Signup form -->
+      <form id="signup-form" onsubmit="handleSignup(event)" style="display: none;">
+        <div class="field">
+          <label for="signupEmail">Email</label>
+          <input
+            type="email"
+            id="signupEmail"
+            name="signupEmail"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="signupPassword">Password</label>
+          <input
+            type="password"
+            id="signupPassword"
+            name="signupPassword"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="actions actions-signup">
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+
+      <p class="hint" id="message"></p>
+
+      <p class="hint">
+        <span id="toggle-text">New to Rexflix?</span>
+        <button type="button" class="link-button" onclick="toggleAuthMode()">
+          <span id="toggle-button-text">Sign up now</span>
+        </button>
+      </p>
+    </main>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,593 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rx-page {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+.rx-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 1.25rem 3.5rem;
+}
+
+.rx-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rx-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.rx-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.rx-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rx-lang-select {
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  background-color: transparent;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.rx-lang-select option {
+  background-color: #000;
+  color: #fff;
+}
+
+.rx-signin-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rx-signin-btn:hover {
+  background-color: #f6121d;
+}
+
+/* Hero Section */
+.rx-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+  text-align: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.rx-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("../assets/backgrounds/Background_landing.jpg");
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+}
+
+.rx-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.7) 30%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.7) 80%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.rx-hero-overlay {
+  display: none;
+}
+
+.rx-hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+
+.rx-hero-title {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
+}
+
+.rx-hero-subtitle {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.rx-hero-text {
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.rx-email-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rx-email-field {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+.rx-email-field input {
+  width: 100%;
+  padding: 1rem 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.rx-email-field input::placeholder {
+  color: #8c8c8c;
+}
+
+.rx-email-field input:focus {
+  outline: none;
+  border-color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.rx-email-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.rx-email-button:hover {
+  background-color: #f6121d;
+}
+
+.rx-arrow {
+  font-size: 1.5rem;
+}
+
+/* Sections */
+.rx-section {
+  border-top: 8px solid #232323;
+  background-color: #000;
+}
+
+.rx-section-dark {
+  color: #fff;
+}
+
+.rx-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3.5rem;
+}
+
+.rx-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+/* Trending Now - Creative Card Design */
+.rx-trending-row {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0 0 1.5rem;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rx-trending-row::-webkit-scrollbar {
+  display: none;
+}
+
+.rx-trending-item {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.rx-trending-card {
+  width: 200px;
+  height: 280px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background: #181818;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.rx-trending-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Play button overlay */
+.rx-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.rx-play-btn {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #000;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  padding-left: 5px;
+}
+
+.rx-trending-card:hover .rx-card-overlay {
+  opacity: 1;
+}
+
+.rx-trending-card:hover .rx-play-btn {
+  transform: scale(1);
+}
+
+.rx-trending-card:hover img {
+  transform: scale(1.1);
+}
+
+.rx-trending-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Rexflix R logo on cards */
+.rx-card-logo {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(180deg, #e50914 0%, #b20710 100%);
+  border-radius: 3px;
+  font-family: 'Bebas Neue', Arial Black, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Match percentage */
+.rx-card-match {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #46d369;
+  z-index: 3;
+}
+
+/* More Reasons Section */
+.rx-reasons-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.rx-reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.rx-reason-card {
+  background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rx-reason-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.rx-reason-card p {
+  font-size: 0.95rem;
+  color: #b3b3b3;
+  flex-grow: 1;
+}
+
+.rx-reason-icon {
+  font-size: 2.5rem;
+  margin-top: auto;
+  text-align: right;
+}
+
+/* FAQ Section */
+.rx-faq-section {
+  border-top: 8px solid #232323;
+  background-color: #000;
+  color: #fff;
+}
+
+.rx-faq-list {
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+}
+
+.rx-faq-item {
+  width: 100%;
+  text-align: left;
+  background-color: #2d2d2d;
+  color: #fff;
+  border: none;
+  margin-bottom: 8px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rx-faq-item:hover {
+  background-color: #3d3d3d;
+}
+
+.rx-faq-icon {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.rx-faq-body {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #2d2d2d;
+  padding: 0 1.5rem;
+  transition: max-height 0.25s ease-out, padding 0.25s ease-out;
+  margin-bottom: 8px;
+}
+
+.rx-faq-body.open {
+  padding: 1.25rem 1.5rem;
+}
+
+.rx-faq-body p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.rx-faq-body p:last-child {
+  margin-bottom: 0;
+}
+
+.rx-faq-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.rx-email-form-bottom {
+  margin-top: 1.25rem;
+}
+
+/* Footer */
+.rx-footer {
+  border-top: 8px solid #232323;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #737373;
+  padding: 4rem 3.5rem;
+}
+
+.rx-footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rx-footer-contact {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rx-footer-contact a {
+  color: #737373;
+  text-decoration: underline;
+}
+
+.rx-footer-contact a:hover {
+  color: #b3b3b3;
+}
+
+.rx-footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.rx-footer-links a {
+  color: #737373;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.rx-footer-links a:hover {
+  text-decoration: underline;
+}
+
+.rx-footer-lang {
+  margin-bottom: 1.5rem;
+}
+
+.rx-footer-text {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .rx-reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rx-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .rx-logo img {
+    height: 30px;
+  }
+
+  .rx-hero {
+    padding: 5rem 1.25rem 3rem;
+    min-height: 70vh;
+  }
+
+  .rx-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .rx-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .rx-hero-text {
+    font-size: 1rem;
+  }
+
+  .rx-section-inner {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .rx-trending-card {
+    width: 140px;
+    height: 196px;
+  }
+
+  .rx-play-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .rx-card-logo {
+    width: 20px;
+    height: 20px;
+    font-size: 0.9rem;
+  }
+
+  .rx-card-match {
+    font-size: 0.65rem;
+  }
+
+  .rx-reasons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rx-reason-card {
+    min-height: auto;
+  }
+
+  .rx-faq-item {
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .rx-faq-body p {
+    font-size: 1rem;
+  }
+
+  .rx-footer {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .rx-footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 280">
+  <defs>
+    <!-- Signature curved ribbon gradient - creates 3D arc illusion on vertical strokes -->
+    <linearGradient id="ribbonGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e50914"/>
+      <stop offset="0.15" stop-color="#e50914"/>
+      <stop offset="0.3" stop-color="#c1060f"/>
+      <stop offset="0.45" stop-color="#7a0007"/>
+      <stop offset="0.5" stop-color="#5c0000"/>
+      <stop offset="0.55" stop-color="#7a0007"/>
+      <stop offset="0.7" stop-color="#c1060f"/>
+      <stop offset="0.85" stop-color="#e50914"/>
+      <stop offset="1" stop-color="#e50914"/>
+    </linearGradient>
+
+    <!-- Subtle top-light sheen for polish -->
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff1a25" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#e50914" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Diagonal ribbon for X strokes -->
+    <linearGradient id="diagRibbon" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#e50914"/>
+      <stop offset="0.3" stop-color="#c1060f"/>
+      <stop offset="0.5" stop-color="#5c0000"/>
+      <stop offset="0.7" stop-color="#c1060f"/>
+      <stop offset="1" stop-color="#e50914"/>
+    </linearGradient>
+
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="0" dy="5" result="off"/>
+      <feFlood flood-color="#000" flood-opacity="0.45" result="clr"/>
+      <feComposite in="clr" in2="off" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="sh"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <!-- ===== R ===== -->
+    <!-- Vertical bar -->
+    <rect x="30" y="35" width="32" height="210" rx="2" fill="url(#ribbonGrad)"/>
+    <rect x="30" y="35" width="32" height="210" rx="2" fill="url(#sheen)"/>
+    <!-- R bowl (round head) -->
+    <path d="M62,35 L95,35 C140,35 140,135 95,140 L62,140 Z" fill="#e50914"/>
+    <!-- Inner bowl cutout -->
+    <path d="M62,55 L90,55 C120,55 120,120 90,120 L62,120 Z" fill="url(#ribbonGrad)"/>
+    <!-- R diagonal leg -->
+    <path d="M88,130 L143,245 L112,245 L62,140 Z" fill="url(#ribbonGrad)"/>
+    <path d="M88,130 L143,245 L135,245 L82,135 Z" fill="url(#sheen)"/>
+
+    <!-- ===== E ===== -->
+    <rect x="160" y="35" width="32" height="210" rx="2" fill="url(#ribbonGrad)"/>
+    <rect x="160" y="35" width="32" height="210" rx="2" fill="url(#sheen)"/>
+    <rect x="160" y="35" width="88" height="28" rx="2" fill="#e50914"/>
+    <rect x="160" y="126" width="72" height="28" rx="2" fill="#e50914"/>
+    <rect x="160" y="217" width="88" height="28" rx="2" fill="#e50914"/>
+
+    <!-- ===== X ===== -->
+    <!-- Top-left to center -->
+    <path d="M270,35 L302,35 L345,126 L313,126 Z" fill="url(#diagRibbon)"/>
+    <!-- Top-right to center -->
+    <path d="M380,35 L412,35 L355,126 L323,126 Z" fill="#e50914"/>
+    <!-- Center to bottom-right -->
+    <path d="M323,138 L355,138 L412,245 L380,245 Z" fill="#e50914"/>
+    <!-- Center to bottom-left -->
+    <path d="M345,138 L313,138 L270,245 L302,245 Z" fill="url(#diagRibbon)"/>
+
+    <!-- ===== F ===== -->
+    <rect x="430" y="35" width="32" height="210" rx="2" fill="url(#ribbonGrad)"/>
+    <rect x="430" y="35" width="32" height="210" rx="2" fill="url(#sheen)"/>
+    <rect x="430" y="35" width="88" height="28" rx="2" fill="#e50914"/>
+    <rect x="430" y="126" width="72" height="28" rx="2" fill="#e50914"/>
+
+    <!-- ===== L ===== -->
+    <rect x="540" y="35" width="32" height="210" rx="2" fill="url(#ribbonGrad)"/>
+    <rect x="540" y="35" width="32" height="210" rx="2" fill="url(#sheen)"/>
+    <rect x="540" y="217" width="82" height="28" rx="2" fill="#e50914"/>
+
+    <!-- ===== I ===== -->
+    <rect x="645" y="35" width="32" height="210" rx="2" fill="url(#ribbonGrad)"/>
+    <rect x="645" y="35" width="32" height="210" rx="2" fill="url(#sheen)"/>
+
+    <!-- ===== X ===== -->
+    <path d="M700,35 L732,35 L775,126 L743,126 Z" fill="url(#diagRibbon)"/>
+    <path d="M810,35 L842,35 L785,126 L753,126 Z" fill="#e50914"/>
+    <path d="M753,138 L785,138 L842,245 L810,245 Z" fill="#e50914"/>
+    <path d="M775,138 L743,138 L700,245 L732,245 Z" fill="url(#diagRibbon)"/>
+  </g>
+</svg>

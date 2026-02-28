@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180">
+  <!-- STYLE 5: Embossed Metallic with proper wide viewBox -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap');
+    </style>
+    <linearGradient id="metalGrad5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF4040"/>
+      <stop offset="15%" stop-color="#FF2020"/>
+      <stop offset="35%" stop-color="#E50914"/>
+      <stop offset="60%" stop-color="#C00810"/>
+      <stop offset="80%" stop-color="#900008"/>
+      <stop offset="100%" stop-color="#6D0000"/>
+    </linearGradient>
+    <filter id="emboss5" x="-10%" y="-10%" width="125%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="0" dy="6" result="off"/>
+      <feFlood flood-color="#000" flood-opacity="0.65" result="clr"/>
+      <feComposite in="clr" in2="off" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Dark outline stroke behind -->
+  <text x="450" y="138" text-anchor="middle"
+        font-family="'Bebas Neue', 'Arial Black', Impact, 'Helvetica Neue', Arial, sans-serif"
+        font-size="155" font-weight="900" letter-spacing="14"
+        fill="none" stroke="#1a0000" stroke-width="8" stroke-linejoin="round"
+        filter="url(#emboss5)">REXFLIX</text>
+  <!-- Gradient-filled text on top -->
+  <text x="450" y="138" text-anchor="middle"
+        font-family="'Bebas Neue', 'Arial Black', Impact, 'Helvetica Neue', Arial, sans-serif"
+        font-size="155" font-weight="900" letter-spacing="14"
+        fill="url(#metalGrad5)">REXFLIX</text>
+</svg>

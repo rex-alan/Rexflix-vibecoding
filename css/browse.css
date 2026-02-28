@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rxb-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f2933 0, #020617 55%);
+  color: #fff;
+}
+
+.rxb-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 3.5rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+  transition: background-color 0.25s ease;
+}
+
+.rxb-header.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.rxb-header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.rxb-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.rxb-logo img {
+  height: 36px;
+  width: auto;
+}
+
+.rxb-nav {
+  display: flex;
+  gap: 1.1rem;
+  font-size: 0.95rem;
+}
+
+.rxb-nav a {
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+.rxb-nav a.active {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.rxb-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rxb-icon-button {
+  background: none;
+  border: none;
+  color: #e5e5e5;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.rxb-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rxb-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #f97316, #db2777);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.rxb-profile-name {
+  font-size: 0.9rem;
+  color: #e5e5e5;
+}
+
+.rxb-signout {
+  border-radius: 4px;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.rxb-main {
+  padding-top: 4.5rem;
+}
+
+.rxb-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 4rem 3.5rem;
+  overflow: hidden;
+}
+
+.rxb-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("assets/browse-hero.jpg"),
+    radial-gradient(circle at 20% 20%, rgba(236, 72, 153, 0.4), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.32), transparent 55%),
+    linear-gradient(to bottom, #020617 0%, #000 65%);
+  background-size: cover, auto, auto, auto;
+  background-position: center, center, center, center;
+  transform: scale(1.05);
+  z-index: -2;
+}
+
+.rxb-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, transparent 60%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 55%);
+  z-index: -1;
+}
+
+.rxb-hero-content {
+  max-width: 540px;
+}
+
+.rxb-hero-logo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 250, 252, 0.4);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.65rem;
+}
+
+.rxb-hero-title {
+  font-size: clamp(2.6rem, 3.8vw + 1.5rem, 3.8rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.rxb-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #e5e5e5;
+  margin-bottom: 0.75rem;
+}
+
+.rxb-badge {
+  font-size: 0.78rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  background: #22c55e;
+  color: #052e16;
+  font-weight: 600;
+}
+
+.rxb-dot {
+  opacity: 0.65;
+}
+
+.rxb-hero-description {
+  font-size: 0.98rem;
+  color: #e5e5e5;
+  max-width: 32rem;
+  margin-bottom: 1.2rem;
+}
+
+.rxb-hero-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.rxb-btn {
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.65rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rxb-btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+.rxb-btn-secondary {
+  background: rgba(75, 85, 99, 0.85);
+  color: #f9fafb;
+}
+
+.rxb-rows {
+  padding: 1.5rem 0 3rem;
+}
+
+.rxb-row {
+  margin-bottom: 1.8rem;
+}
+
+.rxb-row-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.7rem 3.5rem;
+}
+
+.rxb-row-scroller {
+  padding: 0 3.5rem;
+}
+
+.rxb-row-inner {
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+  scroll-behavior: smooth;
+}
+
+.rxb-row-inner::-webkit-scrollbar {
+  height: 6px;
+}
+
+.rxb-row-inner::-webkit-scrollbar-thumb {
+  background-color: rgba(75, 85, 99, 0.9);
+  border-radius: 999px;
+}
+
+.rxb-tile {
+  flex: 0 0 160px;
+  height: 95px;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.75rem;
+  color: #f9fafb;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.rxb-tile-large {
+  flex-basis: 220px;
+  height: 120px;
+}
+
+.rxb-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  background-image: radial-gradient(circle at 20% 0, rgba(248, 250, 252, 0.8), transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(248, 250, 252, 0.5), transparent 55%);
+}
+
+.rxb-tile-label {
+  position: relative;
+  z-index: 1;
+}
+
+.rxb-tile:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Color themes for tiles (original, not copied artwork) */
+.rxb-genre-synth {
+  background: radial-gradient(circle at 0 0, #22d3ee, transparent 55%),
+    radial-gradient(circle at 100% 100%, #6366f1, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-neon {
+  background: radial-gradient(circle at 10% 0, #f97316, transparent 55%),
+    radial-gradient(circle at 100% 80%, #ec4899, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-gold {
+  background: radial-gradient(circle at 0 0, #facc15, transparent 55%),
+    radial-gradient(circle at 100% 100%, #eab308, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-violet {
+  background: radial-gradient(circle at 0 0, #a855f7, transparent 55%),
+    radial-gradient(circle at 100% 100%, #6366f1, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-flame {
+  background: radial-gradient(circle at 0 0, #f97316, transparent 55%),
+    radial-gradient(circle at 100% 100%, #dc2626, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-ocean {
+  background: radial-gradient(circle at 0 0, #22d3ee, transparent 55%),
+    radial-gradient(circle at 100% 100%, #0ea5e9, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-forest {
+  background: radial-gradient(circle at 0 0, #4ade80, transparent 55%),
+    radial-gradient(circle at 100% 100%, #16a34a, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-sunset {
+  background: radial-gradient(circle at 0 0, #fb7185, transparent 55%),
+    radial-gradient(circle at 100% 100%, #f97316, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-cyber {
+  background: radial-gradient(circle at 0 0, #22c55e, transparent 55%),
+    radial-gradient(circle at 100% 100%, #06b6d4, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-coral {
+  background: radial-gradient(circle at 0 0, #fb7185, transparent 55%),
+    radial-gradient(circle at 100% 100%, #f97316, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-teal {
+  background: radial-gradient(circle at 0 0, #22c55e, transparent 55%),
+    radial-gradient(circle at 100% 100%, #14b8a6, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-amber {
+  background: radial-gradient(circle at 0 0, #fbbf24, transparent 55%),
+    radial-gradient(circle at 100% 100%, #f97316, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-rose {
+  background: radial-gradient(circle at 0 0, #fb7185, transparent 55%),
+    radial-gradient(circle at 100% 100%, #e11d48, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-genre-indigo {
+  background: radial-gradient(circle at 0 0, #6366f1, transparent 55%),
+    radial-gradient(circle at 100% 100%, #4f46e5, transparent 55%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.rxb-footer {
+  border-top: 1px solid #1f2937;
+  padding: 1.5rem 3.5rem 2rem;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .rxb-header {
+    padding: 0.6rem 1.25rem;
+  }
+
+  .rxb-nav {
+    display: none;
+  }
+
+  .rxb-hero {
+    padding: 5rem 1.25rem 3rem;
+  }
+
+  .rxb-row-title {
+    margin-left: 1.25rem;
+  }
+
+  .rxb-row-scroller {
+    padding: 0 1.25rem;
+  }
+
+  .rxb-footer {
+    padding: 1.25rem 1.25rem 2rem;
+  }
+}
+

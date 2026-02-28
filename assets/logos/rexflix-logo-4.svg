@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180">
+  <!-- STYLE 4: Red glow / neon — bold text with red outer glow on dark -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap');
+    </style>
+    <filter id="redGlow" x="-15%" y="-15%" width="130%" height="140%">
+      <!-- dark shadow layer -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="darkBlur"/>
+      <feOffset in="darkBlur" dx="0" dy="4" result="darkOff"/>
+      <feFlood flood-color="#000" flood-opacity="0.6" result="darkClr"/>
+      <feComposite in="darkClr" in2="darkOff" operator="in" result="darkShadow"/>
+      <!-- red glow layer -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="glowBlur"/>
+      <feColorMatrix in="glowBlur" type="matrix"
+        values="1 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0.6 0" result="redBlur"/>
+      <feMerge>
+        <feMergeNode in="darkShadow"/>
+        <feMergeNode in="redBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <text x="450" y="138" text-anchor="middle"
+        font-family="'Bebas Neue', 'Arial Black', Impact, 'Helvetica Neue', Arial, sans-serif"
+        font-size="155" font-weight="900" letter-spacing="14"
+        fill="#E50914" filter="url(#redGlow)">REXFLIX</text>
+</svg>

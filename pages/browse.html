@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rexflix</title>
+  <link rel="stylesheet" href="../css/browse.css" />
+</head>
+<body>
+  <div class="rxb-page">
+    <!-- Top navigation -->
+    <header class="rxb-header" id="rxb-header">
+      <div class="rxb-header-left">
+        <a href="browse.html" class="rxb-logo"><img src="../assets/logos/rexflix-logo-5.svg" alt="Rexflix" height="36"></a>
+        <nav class="rxb-nav">
+          <a href="#" class="active">Home</a>
+          <a href="#">Series</a>
+          <a href="#">Films</a>
+          <a href="#">New &amp; Popular</a>
+          <a href="#">My List</a>
+        </nav>
+      </div>
+      <div class="rxb-header-right">
+        <button class="rxb-icon-button" aria-label="Search">
+          🔍
+        </button>
+        <button class="rxb-icon-button" aria-label="Notifications">
+          🔔
+        </button>
+        <div class="rxb-profile" id="rxb-profile">
+          <div class="rxb-avatar" id="rxb-avatar">R</div>
+          <span class="rxb-profile-name" id="rxb-profile-name">Profile</span>
+        </div>
+        <button class="rxb-signout" onclick="handleSignOut()">Sign out</button>
+      </div>
+    </header>
+
+    <!-- Hero section (featured title) -->
+    <main class="rxb-main">
+      <section class="rxb-hero">
+        <div class="rxb-hero-bg"></div>
+        <div class="rxb-hero-overlay"></div>
+        <div class="rxb-hero-content">
+          <div class="rxb-hero-logo-chip">Rexflix Original</div>
+          <h1 class="rxb-hero-title">Nightfall City</h1>
+          <p class="rxb-hero-meta">
+            <span class="rxb-badge">New</span>
+            <span>Season 1</span>
+            <span class="rxb-dot">•</span>
+            <span>16+</span>
+            <span class="rxb-dot">•</span>
+            <span>8 Episodes</span>
+          </p>
+          <p class="rxb-hero-description">
+            In a neon-drenched future, a hacker and a detective must team up to stop a signal that
+            can rewrite memories across the city.
+          </p>
+          <div class="rxb-hero-actions">
+            <button class="rxb-btn rxb-btn-primary">
+              ▶ Play
+            </button>
+            <button class="rxb-btn rxb-btn-secondary">
+              ℹ More info
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rows of content -->
+      <section class="rxb-rows">
+        <div class="rxb-row">
+          <h2 class="rxb-row-title" id="rxb-continue-title">Continue watching</h2>
+          <div class="rxb-row-scroller">
+            <div class="rxb-row-inner">
+              <article class="rxb-tile rxb-tile-large rxb-genre-synth">
+                <div class="rxb-tile-label">Nightfall City</div>
+              </article>
+              <article class="rxb-tile rxb-tile-large rxb-genre-neon">
+                <div class="rxb-tile-label">Signal Drift</div>
+              </article>
+              <article class="rxb-tile rxb-tile-large rxb-genre-gold">
+                <div class="rxb-tile-label">Empire of Glass</div>
+              </article>
+              <article class="rxb-tile rxb-tile-large rxb-genre-violet">
+                <div class="rxb-tile-label">Silent Orbit</div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="rxb-row">
+          <h2 class="rxb-row-title">Popular on Rexflix</h2>
+          <div class="rxb-row-scroller">
+            <div class="rxb-row-inner">
+              <article class="rxb-tile rxb-genre-flame">
+                <div class="rxb-tile-label">Redline District</div>
+              </article>
+              <article class="rxb-tile rxb-genre-ocean">
+                <div class="rxb-tile-label">Below Zero</div>
+              </article>
+              <article class="rxb-tile rxb-genre-forest">
+                <div class="rxb-tile-label">Echo Woods</div>
+              </article>
+              <article class="rxb-tile rxb-genre-sunset">
+                <div class="rxb-tile-label">Last Light</div>
+              </article>
+              <article class="rxb-tile rxb-genre-cyber">
+                <div class="rxb-tile-label">Quantum Run</div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="rxb-row">
+          <h2 class="rxb-row-title">Trending Now</h2>
+          <div class="rxb-row-scroller">
+            <div class="rxb-row-inner">
+              <article class="rxb-tile rxb-genre-coral">
+                <div class="rxb-tile-label">Paper Suns</div>
+              </article>
+              <article class="rxb-tile rxb-genre-teal">
+                <div class="rxb-tile-label">Midnight Metro</div>
+              </article>
+              <article class="rxb-tile rxb-genre-amber">
+                <div class="rxb-tile-label">Solar Tides</div>
+              </article>
+              <article class="rxb-tile rxb-genre-rose">
+                <div class="rxb-tile-label">Glass Hearts</div>
+              </article>
+              <article class="rxb-tile rxb-genre-indigo">
+                <div class="rxb-tile-label">Parallel Lines</div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="rxb-row">
+          <h2 class="rxb-row-title">Because you watched sci‑fi</h2>
+          <div class="rxb-row-scroller">
+            <div class="rxb-row-inner">
+              <article class="rxb-tile rxb-genre-cyber">
+                <div class="rxb-tile-label">Neon Ghosts</div>
+              </article>
+              <article class="rxb-tile rxb-genre-synth">
+                <div class="rxb-tile-label">Circuit Dreams</div>
+              </article>
+              <article class="rxb-tile rxb-genre-ocean">
+                <div class="rxb-tile-label">Deep Signal</div>
+              </article>
+              <article class="rxb-tile rxb-genre-violet">
+                <div class="rxb-tile-label">Starlit Horizon</div>
+              </article>
+              <article class="rxb-tile rxb-genre-flame">
+                <div class="rxb-tile-label">Zero Hour</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rxb-footer">
+      <p class="rxb-footer-text">Rexflix – a Netflix-inspired demo experience.</p>
+    </footer>
+  </div>
+
+  <script src="../js/browse.js"></script>
+</body>
+</html>
+

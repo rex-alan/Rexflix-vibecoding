@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180">
+  <!-- STYLE 1: Clean Flat Bold — closest to Netflix's primary flat logo -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap');
+    </style>
+  </defs>
+  <text x="450" y="138" text-anchor="middle"
+        font-family="'Bebas Neue', 'Arial Black', Impact, 'Helvetica Neue', Arial, sans-serif"
+        font-size="155" font-weight="900" letter-spacing="14"
+        fill="#E50914" font-style="normal">REXFLIX</text>
+</svg>
