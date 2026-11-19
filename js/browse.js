@@ -11,6 +11,7 @@ function loadCurrentUser() {
 }
 
 //sample1
+//sample2
 
 function checkAuth() {
   const user = loadCurrentUser();
