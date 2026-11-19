@@ -10,6 +10,8 @@ function loadCurrentUser() {
   }
 }
 
+//sample1
+
 function checkAuth() {
   const user = loadCurrentUser();
   if (!user) {
