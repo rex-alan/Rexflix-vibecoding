@@ -18,6 +18,7 @@ function loadCurrentUser() {
 ////sample5
 //no ci
 //no ci2
+// no origin name
 
 
 function checkAuth() {
