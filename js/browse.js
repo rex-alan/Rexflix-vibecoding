@@ -13,6 +13,7 @@ function loadCurrentUser() {
 //sample1
 //sample2
 //sample3
+//sampe conflict
 
 function checkAuth() {
   const user = loadCurrentUser();
