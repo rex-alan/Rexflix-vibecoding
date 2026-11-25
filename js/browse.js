@@ -16,6 +16,7 @@ function loadCurrentUser() {
 //sampe conflict
 //sample4
 ////sample5
+//no ci
 
 function checkAuth() {
   const user = loadCurrentUser();
