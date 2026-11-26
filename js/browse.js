@@ -20,6 +20,7 @@ function loadCurrentUser() {
 //no ci2
 // no origin name
 // merge no commit
+// conflict 1
 
 
 function checkAuth() {
